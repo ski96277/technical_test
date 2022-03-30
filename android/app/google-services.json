@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "107710420875",
+    "project_id": "teamleancetechnicaltest",
+    "storage_bucket": "teamleancetechnicaltest.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:107710420875:android:b52f00064c5fa89491018e",
+        "android_client_info": {
+          "package_name": "com.example.teamleance_technecal_test"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "107710420875-eqblpro223hn6eab23jtcff57jgllid6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.teamleance_technecal_test",
+            "certificate_hash": "959dc7423c587498ae627ddac69fcdc8ebb5c886"
+          }
+        },
+        {
+          "client_id": "107710420875-3a7s9c8s17hj0h06uoqvh4h7da10gc3s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDF3FrD7u-ifllb1fE5HbuxzSoZrFadcTM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "107710420875-3a7s9c8s17hj0h06uoqvh4h7da10gc3s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
