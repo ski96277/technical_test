@@ -1,8 +1,6 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:teamleance_technecal_test/model/booked_model.dart';
 import 'package:teamleance_technecal_test/pref/pref_const.dart';
 import 'package:teamleance_technecal_test/routes/app_routes.dart';
 import 'package:teamleance_technecal_test/utils/color_const.dart';

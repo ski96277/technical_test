@@ -12,8 +12,6 @@ class HomeRepo {
   }
 
   Future<dynamic> submitMyBookedData(BookedModel bookedModel) async {
-    // DocumentReference documentReference = firestore.collection("bookedData").doc(FirebaseAuth.instance.currentUser!.uid);
-    //
     return await firestore.collection("bookedData").doc(bookedModel.docAutoID!).set(bookedModel.toJson());
   }
 
@@ -23,18 +21,13 @@ class HomeRepo {
         .where("authID", isEqualTo: FirebaseAuth.instance.currentUser!.uid)
         .where("placesID", isEqualTo: bookedModel.placesID)
         .get().then((querySnapshot) async {
-      // var autoID = "";
       for (var element in querySnapshot.docs) {
-        // autoID = element['docAutoID'];
 
 
       return await firestore.collection("bookedData").doc(element['docAutoID']).delete();
     }
 
-
     });
-
-
   }
 
   Future<QuerySnapshot> callPlacesData() async {

@@ -4,19 +4,19 @@ import 'package:intl/intl.dart';
 import 'package:teamleance_technecal_test/routes/app_routes.dart';
 import 'package:teamleance_technecal_test/utils/color_const.dart';
 import 'package:teamleance_technecal_test/utils/text_style.dart';
-import 'package:teamleance_technecal_test/viewModel/place_list_screen_vm.dart';
+import 'package:teamleance_technecal_test/viewModel/home_screen_vm.dart';
 
 class PlaceListScreen extends StatelessWidget {
   const PlaceListScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<PlaceListVM>(builder: (placeListVM) {
+    return GetBuilder<HomeScreenVM>(builder: (placeListVM) {
       return Scaffold(
           appBar: AppBar(
-            title: const Text("Place List"),
+            title: const Text("Booked Places"),
           ),
-          body: placeListVM.homeScreenVM.placeBookingList.isEmpty
+          body: placeListVM.placeBookingList.isEmpty
               ? Center(
                   child: Text(
                     "empty".tr,
@@ -25,10 +25,10 @@ class PlaceListScreen extends StatelessWidget {
                 )
               : ListView.builder(
                   padding: EdgeInsets.zero,
-                  itemCount: placeListVM.homeScreenVM.placeBookingList.length,
+                  itemCount: placeListVM.placeBookingList.length,
                   itemBuilder: (context, index) {
                     return InkWell(
-                      onTap: () => Get.toNamed(AppRoutes.placeDetailsScreen, arguments: placeListVM.homeScreenVM.placeBookingList[index]),
+                      onTap: () => Get.toNamed(AppRoutes.placeDetailsScreen, arguments: placeListVM.placeBookingList[index]),
                       child: Container(
                         margin: const EdgeInsets.all(10),
                         decoration: BoxDecoration(
@@ -63,7 +63,7 @@ class PlaceListScreen extends StatelessWidget {
                                       );
                                     },
                                     fit: BoxFit.cover,
-                                    image: "${placeListVM.homeScreenVM.placeBookingList[index].placeImage}",
+                                    image: "${placeListVM.placeBookingList[index].placeImage}",
                                   ),
                                 ),
                               ),
@@ -78,11 +78,11 @@ class PlaceListScreen extends StatelessWidget {
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        "${placeListVM.homeScreenVM.placeBookingList[index].placeTitle}",
+                                        "${placeListVM.placeBookingList[index].placeTitle}",
                                         style: getTextStyleNormalW5(fontSize: 0.016),
                                       ),
                                       Text(
-                                        placeListVM.homeScreenVM.placeBookingList[index].placeType!,
+                                        placeListVM.placeBookingList[index].placeType!,
                                         style: getTextStyleNormal(color: ColorConst.greyColor, fontSize: 0.014),
                                       ),
                                       const Spacer(),
@@ -97,7 +97,7 @@ class PlaceListScreen extends StatelessWidget {
                                           ),
                                           Text(
                                             DateFormat('yyyy-MM-dd')
-                                                .format(DateTime.fromMicrosecondsSinceEpoch(placeListVM.homeScreenVM.placeBookingList[index].dataFrom!.microsecondsSinceEpoch)),
+                                                .format(DateTime.fromMicrosecondsSinceEpoch(placeListVM.placeBookingList[index].dataFrom!.microsecondsSinceEpoch)),
                                             style: getTextStyleNormal(fontSize: 0.015),
                                           ),
                                           const Spacer(),
@@ -113,11 +113,11 @@ class PlaceListScreen extends StatelessWidget {
                                             style: getTextStyleNormalW5(fontSize: 0.015),
                                           ),
                                           Text(
-                                            "${placeListVM.homeScreenVM.placeBookingList[index].currency} ${placeListVM.homeScreenVM.placeBookingList[index].amount} ",
+                                            "${placeListVM.placeBookingList[index].currency} ${placeListVM.placeBookingList[index].amount} ",
                                             style: getTextStyleNormal(fontSize: 0.015, color: ColorConst.lightGreen!),
                                           ),
                                           Text(
-                                            " / ${placeListVM.homeScreenVM.placeBookingList[index].days} days",
+                                            " / ${placeListVM.placeBookingList[index].days} days",
                                             style: getTextStyleNormal(
                                               fontSize: 0.015,
                                               color: ColorConst.greyColor,
